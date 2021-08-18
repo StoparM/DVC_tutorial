@@ -7,7 +7,7 @@ import numpy as np
 import sklearn.metrics as metrics
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import classification_report, confusion_matrix, roc_auc_score, plot_roc_curve,accuracy_score
 from sklearn.metrics import average_precision_score
 from numpyencoder import NumpyEncoder
@@ -38,9 +38,8 @@ def train_and_evaluate(config_path):
 
     y_train = y_train.to_numpy()
     y_test = y_test.to_numpy()
-    
-    from sklearn.linear_model import LogisticRegression
-    model = LogisticRegression(solver='sag', random_state=0).fit(x_train, y_train.ravel())
+   
+    model = DecisionTreeClassifier(criterion = 'entropy', random_state = 0).fit(x_train, y_train.ravel())
 
     train_score = model.score(x_train, y_train) * 100
     print(train_score)
