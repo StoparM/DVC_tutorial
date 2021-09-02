@@ -9,6 +9,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.tree import DecisionTreeClassifier
+from sklearn.svm import SVC
+
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
 from sklearn.metrics import average_precision_score
 from numpyencoder import NumpyEncoder
@@ -88,9 +90,11 @@ def train_and_evaluate(config_path):
     y_test = y_test.to_numpy()
     
     from sklearn.linear_model import LogisticRegression
-    model = RandomForestClassifier(n_estimators=10, criterion = 'entropy', random_state = 0).fit(x_train, y_train.ravel())
-    # DecisionTreeClassifier(criterion = 'entropy', random_state = 0)
-
+    model = DecisionTreeClassifier(criterion = 'entropy', random_state = 999).fit(x_train, y_train.ravel())
+    # DecisionTreeClassifier(criterion = 'entropy', random_state = 999)
+    # LogisticRegression()
+    # SVC(kernel='linear', random_state = 999)
+    # RandomForestClassifier(n_estimators=10, criterion = 'entropy', random_state = 999)
 
     predicted_val = model.predict(x_test)
 

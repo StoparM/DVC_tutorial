@@ -7,8 +7,8 @@ stages:
       md5: 7a3a75bce90273926aca4e25192eaf7a
       size: 18294546
     - path: ./saved_models/src/get_data.py
-      md5: 8be524c003abea44b3b048ac01470b7e
-      size: 793
+      md5: b8b800a9a5065a14b3e1b94acfd98a1d
+      size: 773
     - path: ./saved_models/src/load_data.py
       md5: f24f265a371248a9e24f07ef8ddb9153
       size: 504
@@ -27,39 +27,39 @@ stages:
       size: 1490
     outs:
     - path: ./data/processed/x_test.csv
-      md5: 4116be92f1ab73dc47dda87ab55b2b24
-      size: 6295464
+      md5: 64a99881026c885cc24d3a6830f9b397
+      size: 3580065
     - path: ./data/processed/x_train.csv
-      md5: 16c9a4625cdb66f3c452126ca99d1cd0
-      size: 11878927
+      md5: 94af371da524383f746320946f60ac0a
+      size: 14594326
     - path: ./data/processed/y_test.csv
-      md5: 5be237aa1244c921d8b06c0f1748a6d8
-      size: 8787
+      md5: 398f2b9d16804be7dab67ad7a80c5504
+      size: 5022
     - path: ./data/processed/y_train.csv
-      md5: 0bc79fd1962b7f7d95fd9ed38bd3b92e
-      size: 16317
+      md5: 45c94bd1509c0ab76af48f8785fa06a1
+      size: 20082
   train_and_evaluate:
     cmd: python  ./saved_models/src/train_and_evaluate.py --config=params.yaml
     deps:
     - path: ./data/processed/x_test.csv
-      md5: 4116be92f1ab73dc47dda87ab55b2b24
-      size: 6295464
+      md5: 64a99881026c885cc24d3a6830f9b397
+      size: 3580065
     - path: ./data/processed/x_train.csv
-      md5: 16c9a4625cdb66f3c452126ca99d1cd0
-      size: 11878927
+      md5: 94af371da524383f746320946f60ac0a
+      size: 14594326
     - path: ./data/processed/y_test.csv
-      md5: 5be237aa1244c921d8b06c0f1748a6d8
-      size: 8787
+      md5: 398f2b9d16804be7dab67ad7a80c5504
+      size: 5022
     - path: ./data/processed/y_train.csv
-      md5: 0bc79fd1962b7f7d95fd9ed38bd3b92e
-      size: 16317
+      md5: 45c94bd1509c0ab76af48f8785fa06a1
+      size: 20082
     - path: ./saved_models/src/train_and_evaluate.py
-      md5: f6478677bc890eff11ddce28dadc97dc
-      size: 4530
+      md5: 714b4ba2813a8690f602a779d3e0c7d0
+      size: 4714
     outs:
     - path: ./saved_models/model.joblib
-      md5: 8e644a0272e8808f6a356c323cebe4e3
-      size: 598729
+      md5: b09d8dc5ccb40512b7dc03190a98d565
+      size: 60624
     - path: report/scores.json
-      md5: ac17b1352388c412fb7abec82488996d
-      size: 32
+      md5: c5a61a7900feb22b77ef0de00b2cdde0
+      size: 17
